@@ -49,7 +49,7 @@ RUN apt-get -y update && \
       realpath \
       net-tools && \
     mkdir -p /cluster-configuration &&\
-    git clone https://github.com/Microsoft/pai.git &&\
+    git clone https://github.com/neil1109/pai.git &&\
     pip install python-etcd
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
