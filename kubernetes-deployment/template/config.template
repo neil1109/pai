@@ -24,9 +24,9 @@ clusters:
 contexts:
 - context:
     cluster: kubernetes
-    user: admin
-  name: kubernetes
-current-context: kubernetes
+    user:  kuberneten-admin
+  name: kubernetes-admin@kubernetes
+current-context: kubernetes-admin@kubernetes
 kind: Config
 preferences: {}
 users: []

@@ -27,17 +27,15 @@ spec:
     name: apiserver-container
     command:
     - /usr/local/bin/kube-apiserver
-    - --insecure-bind-address
-    - {{ hostcofig['hostip'] }}
-    - --storage-backend
-    - {{ clusterconfig['storage-backend'] }}
+    #- --insecure-bind-address={{ hostcofig['hostip'] }}
+    - --advertise-address={{ hostcofig['hostip'] }}
+    - --insecure-bind-address=0.0.0.0
+    - --insecure-port=8080
+    - --storage-backend={{ clusterconfig['storage-backend'] }}
     - --allow-privileged=true
-    - --etcd-servers
-    - {{ clusterconfig['etcd_cluster_ips_server'] }}
-    - --service-cluster-ip-range
-    - {{ clusterconfig['service-cluster-ip-range'] }}
-    - --storage-media-type
-    - application/json
+    - --etcd-servers={{ clusterconfig['etcd_cluster_ips_server'] }}
+    - --service-cluster-ip-range={{ clusterconfig['service-cluster-ip-range'] }}
+    - --authorization-mode=RBAC
+    - --storage-media-type=application/json
     - --anonymous-auth=true
-    - --cors-allowed-origins
-    - .*
+    - --cors-allowed-origins=.*

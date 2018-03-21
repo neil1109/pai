@@ -27,8 +27,7 @@ spec:
     name: kube-scheduler
     command:
     - /usr/local/bin/kube-scheduler
-    - --master
-    - {{ clusterconfig['api-servers-ip'] }}:8080
+    - --master={{ clusterconfig['api-servers-ip'] }}:8080
     - --leader-elect=true
     livenessProbe:
       httpGet:
